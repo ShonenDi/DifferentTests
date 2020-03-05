@@ -13,13 +13,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView addMenu = findViewById(R.id.adding_new_menu);
-        addMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent addMenu = new Intent(MainActivity.this,Menu.class);
-            }
-        });
+        /**
+         * TextView add menu use to activate Menu
+         */
 
 
     }
