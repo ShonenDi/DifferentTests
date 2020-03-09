@@ -6,11 +6,10 @@ public class Dish {
     private double calories;
     private double totalCalories;
 
-    public Dish(String dishName, double dishWeight, double calories, double totalCalories) {
+    public Dish(String dishName, double dishWeight, double calories) {
         this.dishName = dishName;
         this.dishWeight = dishWeight;
         this.calories = calories;
-        this.totalCalories = totalCalories;
     }
 
     public String getDishName() {
@@ -38,6 +37,7 @@ public class Dish {
     }
 
     public double getTotalCalories() {
+        totalCalories= (dishWeight*calories)/100;
         return totalCalories;
     }
 

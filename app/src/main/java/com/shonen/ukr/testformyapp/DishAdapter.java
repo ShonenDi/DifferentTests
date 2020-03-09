@@ -1,6 +1,7 @@
 package com.shonen.ukr.testformyapp;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -24,6 +25,10 @@ public class DishAdapter extends ArrayAdapter<Dish> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View listItem = convertView;
+        if (listItem == null) {
+            listItem = LayoutInflater.from(getContext())
+                    .inflate(R.layout.list_item, parent, false);
+        }
         Dish customDish = getItem(position);
         TextView customDishName = listItem.findViewById(R.id.dish_name_txt_view);
         customDishName.setText(customDish.getDishName());
