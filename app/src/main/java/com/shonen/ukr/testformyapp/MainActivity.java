@@ -16,15 +16,22 @@ public class MainActivity extends AppCompatActivity {
         /**
          * TextView add menu use to activate Menu
          */
-        TextView addMenu = findViewById(R.id.show_menus);
+        TextView showMenu = findViewById(R.id.show_menus);
+        showMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent showMenu = new Intent(MainActivity.this, Menu.class);
+                startActivity(showMenu);
+            }
+        });
+        final TextView addMenu = findViewById(R.id.adding_new_menu);
         addMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent addMenu = new Intent(MainActivity.this,Menu.class);
-                startActivity(addMenu);
+                Intent addDish = new Intent(MainActivity.this, AddDish.class);
+                startActivity(addDish);
             }
         });
-
 
     }
 }
