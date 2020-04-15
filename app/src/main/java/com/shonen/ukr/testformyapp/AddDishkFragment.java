@@ -33,11 +33,14 @@ public class AddDishkFragment extends Fragment  {
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Dish dish = new Dish(nameFood.getText().toString(), Double.parseDouble(weightFood.getText().toString()), Double.parseDouble(calories.getText().toString()));
-
-                Intent intent = new Intent(getContext(), FoodsMenu.class);
-                intent.putExtra(Dish.class.getSimpleName(), dish);
-                startActivity(intent);
+                try {
+                    Dish dish = new Dish(nameFood.getText().toString(), Double.parseDouble(weightFood.getText().toString()), Double.parseDouble(calories.getText().toString()));
+                    Intent intent = new Intent(getContext(), FoodsMenu.class);
+                    intent.putExtra(Dish.class.getSimpleName(), dish);
+                    startActivity(intent);
+                } catch (NumberFormatException e) {
+                    e.printStackTrace();
+                }
             }
         });
 

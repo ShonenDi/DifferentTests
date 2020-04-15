@@ -34,8 +34,9 @@ public class FoodsMenu extends AppCompatActivity {
             Bundle arguments = getIntent().getExtras();
             final Dish dish;
             dish = (Dish) arguments.getSerializable(Dish.class.getSimpleName());
-            int size = dishMenu.size();
-            dishMenu.add(size, dish);
+            dishAdapter.add(new Dish(dish.getDishName(),dish.getDishWeight(),dish.getCalories()));
+            dishAdapter.notifyDataSetChanged();
+
         } catch (NullPointerException e) {
             e.printStackTrace();
         }

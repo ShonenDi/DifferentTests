@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/list_menu"
     android:layout_width="match_parent"
     android:layout_height="80dp"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
+
+
     <ImageView
         android:id="@+id/img_for_test"
         android:layout_width="80dp"

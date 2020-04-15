@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent showMenu = new Intent(MainActivity.this, FoodsMenu.class);
+                showMenu.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(showMenu);
             }
         });
